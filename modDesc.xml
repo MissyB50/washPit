@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="no" ?>
+<modDesc descVersion="67">
+    <author>MISSYB</author>
+    <version>1.0.0.0</version>
+    <title>
+        <en>Wash Station</en>
+        <de>Waschstation</de>
+        <sw>Tvättstation</sw>
+    </title>
+<description>
+<en><![CDATA[We have 2 washing system done by KAERCHER,
+Wash Station
+Price; 10000
+
+Standalone version
+Price; 1000
+]]></en>
+<de><![CDATA[
+Waschplatz
+Preis: 10000
+
+Standalone-Version
+Preis; 1000
+]]></de>
+
+<sw><![CDATA[
+Tvättstation
+Preis: 10000
+
+Fristående version
+Pris; 1000
+]]></sw>
+</description>
+    <iconFilename>icon.dds</iconFilename>
+    <multiplayer supported="true" />
+
+    <storeItems>
+        <storeItem xmlFilename="wash.xml" />        
+        <storeItem xmlFilename="wash_sa.xml" />  
+    </storeItems>
+
+    <l10n>
+        <text name="shopItem_washStation">
+            <en>Wash your vehicles and equipment</en>
+            <de>Waschen Sie Ihre Fahrzeuge und Ausrüstung</de>
+            <sw>Tvätta dina fordon och utrustning</sw>
+        </text>
+        <text name="function_washStation">
+            <en>Wash your vehicles and equipment</en>
+            <de>Waschen Sie Ihre Fahrzeuge und Ausrüstung</de>
+            <sw>Tvätta dina fordon och utrustning</sw>
+        </text>
+        <text name="action_lightOn">
+            <en>Lights On</en>
+            <de>Lichter an</de>
+            <sw>Ljus på</sw>
+        </text>
+        <text name="action_lightOff">
+            <en>Lights Off</en>
+            <de>Lichten aus</de>
+            <sw>Ljus av</sw>
+        </text>
+    </l10n>
+</modDesc>

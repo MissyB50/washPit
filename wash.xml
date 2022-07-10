@@ -1,0 +1,145 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="no" ?>
+<placeable type="highPressureWasher" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../shared/xml/schema/placeable.xsd">
+    <storeData>
+        <name>
+		    <en>Wash Station</en>
+            <de>Waschplatz</de>
+            <sw>Tvättstation</sw>
+        </name>
+        <functions>
+            <function>$l10n_function_highPressureWasher</function>
+        </functions>
+        <image>store_st.dds</image>
+        <price>10000</price>
+        <lifetime>1000</lifetime>
+        <rotation>0</rotation>
+        <brand>KAERCHER</brand>
+        <species>placeable</species>
+        <category>placeableMisc</category>
+        <brush>
+            <type>placeable</type>
+            <category>buildings</category>
+            <tab>tools</tab>
+        </brush>
+    </storeData>
+
+    <base>
+        <filename>wash.i3d</filename>
+    </base>
+
+    <placement useRandomYRotation="false" useManualYRotation="true" alignToWorldY="true">
+        <testAreas>
+            <testArea startNode="testArea1Start" endNode="testArea1End" />
+        </testAreas>
+
+        <sounds>
+            <place template="largeImp" pitchScale="1.6"/>
+        </sounds>
+    </placement>
+
+    <clearAreas>
+        <clearArea startNode="clearArea1Start" widthNode="clearArea1Width" heightNode="clearArea1Height"/>
+    </clearAreas>
+
+    <leveling requireLeveling="true" maxSmoothDistance="5" maxSlope="30" maxEdgeAngle="20">
+        <levelAreas>
+            <levelArea startNode="levelStart" widthNode="levelWidth" heightNode="levelHeight" groundType="asphalt"/>
+        </levelAreas>
+    </leveling>
+
+    <indoorAreas>
+        <indoorArea startNode="indoorArea1Start" widthNode="indoorArea1Width" heightNode="indoorArea1Height"/>
+    </indoorAreas>
+
+    <tipOcclusionUpdateAreas>
+        <tipOcclusionUpdateArea startNode="tipOcclusionUpdateArea1Start" endNode="tipOcclusionUpdateArea1End" />
+    </tipOcclusionUpdateAreas>
+
+    <ai>
+        <updateAreas>
+            <updateArea startNode="tipOcclusionUpdateArea1Start" endNode="tipOcclusionUpdateArea1End" />
+        </updateAreas>
+    </ai>
+
+    <animatedObjects>
+        <animatedObject saveId="lights" >
+        <controls triggerNode="5|0" posAction="ACTIVATE_HANDTOOL" posText="action_lightOn" negText="action_lightOff" />
+        <sounds>
+            <moving file="sounds/switchClick.wav" loops="0" linkNode="5|1" volume="0.8" radius="25" innerRadius="3" fadeOut="0.25"/>
+        </sounds>
+            <animation duration="0.1">
+            <part node="5|1|0">
+                <keyFrame time="0.0" rotation="-6 0 0"/>
+                <keyFrame time="1" rotation="6 0 0"/>
+            </part>
+            <part node="5|2|0">
+                <keyFrame time="0.0" visibility="false"/>
+                <keyFrame time="1" visibility="true" />
+            </part>
+            <part node="5|3|0">
+                <keyFrame time="0.0" visibility="false"/>
+                <keyFrame time="1" visibility="true" />
+            </part>
+            <part node="5|4|0">
+                <keyFrame time="0.0" visibility="false"/>
+                <keyFrame time="1" visibility="true" />
+            </part>
+            <part node="5|5|0">
+                <keyFrame time="0.0" visibility="false"/>
+                <keyFrame time="1" visibility="true" />
+            </part>
+            </animation>
+        </animatedObject>
+    </animatedObjects>
+
+    <infoTrigger triggerNode="infoTrigger" />
+
+    <highPressureWasher>
+        <handtool filename="$data/placeables/kaercher/hds9184M/firstPerson/hds9184MLance.xml" />
+        <lance node="lance" />
+        <sounds>
+            <compressor template="PRESSURE_WASHER_RUN_01" linkNode="0>" />
+            <switch template="PRESSURE_WASHER_SWITCH_01" linkNode="lanceMountedSoundNode" />
+        </sounds>
+    </highPressureWasher>
+
+    <highPressureWasher>
+        <handtool filename="$data/placeables/kaercher/hds9184M/firstPerson/hds9184MLance.xml" />
+        <lance node="lance1" />
+        <sounds>
+            <compressor template="PRESSURE_WASHER_RUN_01" linkNode="0>" />
+            <switch template="PRESSURE_WASHER_SWITCH_01" linkNode="lanceMountedSoundNode1" />
+        </sounds>
+    </highPressureWasher>
+
+    <i3dMappings>
+        <i3dMapping id="lance" node="0>7|0|0" />
+        <i3dMapping id="lanceMountedSoundNode" node="0>7|0|1" />
+        <i3dMapping id="exhaust" node="0>7|0|2" />
+        <i3dMapping id="positionRef1" node="0>7|1|0" />
+        <i3dMapping id="positionRef2" node="0>7|1|1" />
+        <i3dMapping id="positionRef3" node="0>7|1|2" />
+        <i3dMapping id="infoTrigger" node="0>7|2" />
+        <i3dMapping id="clearArea1Start" node="0>1|0" />
+        <i3dMapping id="clearArea1Width" node="0>1|0|0" />
+        <i3dMapping id="clearArea1Height" node="0>1|0|1" />
+        <i3dMapping id="levelStart" node="0>2|0" />
+        <i3dMapping id="levelWidth" node="0>2|0|0" />
+        <i3dMapping id="levelHeight" node="0>2|0|1" />
+        <i3dMapping id="indoorArea1Start" node="0>3|0" />
+        <i3dMapping id="indoorArea1Width" node="0>3|0|0" />
+        <i3dMapping id="indoorArea1Height" node="0>3|0|1" />
+        <i3dMapping id="testArea1Start" node="0>9|0" />
+        <i3dMapping id="testArea1End" node="0>9|0|0" />
+        <i3dMapping id="tipOcclusionUpdateArea1Start" node="0>10|0" />
+        <i3dMapping id="tipOcclusionUpdateArea1End" node="0>10|0|0" />
+        <i3dMapping id="kaercherHDS918" node="0>7|3|0" />
+        <i3dMapping id="lance1" node="0>8|0|0" />
+        <i3dMapping id="lanceMountedSoundNode1" node="0>8|0|1" />
+        <i3dMapping id="exhaust1" node="0>8|0|2" />
+        <i3dMapping id="positionRef11" node="0>8|1|0" />
+        <i3dMapping id="positionRef22" node="0>8|1|1" />
+        <i3dMapping id="positionRef33" node="0>8|1|2" />
+        <i3dMapping id="kaercherHDS9181" node="0>8|3|0" />
+    </i3dMappings>
+</placeable>
